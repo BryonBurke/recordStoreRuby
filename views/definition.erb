@@ -1,9 +1,9 @@
 <h2>Definition: <%= @definition.name %></h2>
 <ul>
   <li>Word: <%= @definition.word.name %></li>
-  <li>Artist: <%= @definition.artist_name %></li>
+  <!-- <li>Artist: <%= @definition.artist_name %></li>
   <li>Year: <%= @definition.year_recorded %></li>
-  <li>Studio: <%= @definition.studio %> </li>
+  <li>Studio: <%= @definition.studio %> </li> -->
 </ul>
 
 <form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
@@ -12,11 +12,11 @@
   <label for="name">Rename definition</label>
   <input id="name" name="name" type="text" value="<%= @definition.name %>">
 
-  <label for="artist_name">Rename Artist</label>
+  <!-- <label for="artist_name">Rename Artist</label>
   <input id="artist_name" name="artist_name" type="text" value="<%= @definition.artist_name %>">
 
   <label for="year_recorded">Update Year</label>
-  <input id="year_recorded" name="year_recorded" type="text" value="<%= @definition.year_recorded %>">
+  <input id="year_recorded" name="year_recorded" type="text" value="<%= @definition.year_recorded %>"> -->
 
   <button type="submit">Update definition</button>
 </form>

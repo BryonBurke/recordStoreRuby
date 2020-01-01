@@ -9,9 +9,9 @@ class Definition
     @name = attributes.fetch(:name)
     @word_id = attributes.fetch(:word_id)
     @id = attributes.fetch(:id) || @@total_rows += 1
-    @artist_name = attributes.fetch(:artist_name)
-    @year_recorded = attributes.fetch(:year_recorded)
-    @studio = attributes.fetch(:studio)
+    # @artist_name = attributes.fetch(:artist_name)
+    # @year_recorded = attributes.fetch(:year_recorded)
+    # @studio = attributes.fetch(:studio)
   end
 
   def ==(definition_to_compare)
@@ -23,7 +23,7 @@ class Definition
   end
 
   def save
-    @@definitions[self.id] = Definition.new({:name => @name, :word_id => @word_id, :id => @id, :artist_name => @artist_name, :year_recorded => @year_recorded, :studio => @studio})
+    @@definitions[self.id] = Definition.new({:name => @name, :word_id => @word_id, :id => @id})
   end
 
   def self.find(id)

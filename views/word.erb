@@ -1,4 +1,5 @@
 <h2>Word: <%= @word.name %></h2>
+<h3>Current definitions</h3>
 
   <% if @word.definitions %>
     <ul>
@@ -12,7 +13,7 @@
 
 <h4>Add a definition:</h4>
 
-<form action="/words/<%= @word.id %>/words" method="post">
+<form action="/words/<%= @word.id %>/definitions" method="post">
   <div class="form-group">
     <label for="definition_name"></label>
     <input id="definition_name" name="definition_name" class="form-control" type="text">
