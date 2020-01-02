@@ -55,6 +55,7 @@ get ('/words/:id/buy') do
     @word.sold
     redirect to('/words')
 end
+ 
 delete ('/words/:id') do
   @word = Word.find(params[:id].to_i())
   @word.delete()
