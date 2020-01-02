@@ -1,10 +1,10 @@
 <h2>Word: <%= @word.name %></h2>
-<h3>Current definitions</h3>
+<h4>Current definitions</h4>
 
   <% if @word.definitions %>
     <ul>
       <% @word.definitions.each do |definition| %>
-        <li><a href="/words/<%= @word.id %>/words/<%= definition.id %>"><%= definition.name %></a></li>
+        <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.name %></a></li>
       <% end %>
     </ul>
   <% else %>
@@ -23,7 +23,7 @@
 
 <form action="/words/<%= @word.id() %>/edit" method="get">
   <input name="_method" type="hidden" value="edit">
-  <button type="submit">Edit word</button>
+  <button type="submit">Delete word</button>
 </form>
 
 <p><a href="/words">Return to word list</a></p>

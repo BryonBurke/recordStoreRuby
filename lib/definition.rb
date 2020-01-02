@@ -9,9 +9,6 @@ class Definition
     @name = attributes.fetch(:name)
     @word_id = attributes.fetch(:word_id)
     @id = attributes.fetch(:id) || @@total_rows += 1
-    # @artist_name = attributes.fetch(:artist_name)
-    # @year_recorded = attributes.fetch(:year_recorded)
-    # @studio = attributes.fetch(:studio)
   end
 
   def ==(definition_to_compare)
@@ -33,9 +30,9 @@ class Definition
   def update(name, word_id, artist_name, year_recorded, studio)
     self.name = name
     self.word_id = word_id
-    self.artist_name = artist_name
-    self.year_recorded = year_recorded
-    self.studio = studio
+    # self.artist_name = artist_name
+    # self.year_recorded = year_recorded
+    # self.studio = studio
     @@definitions[self.id] = Definition.new({:name => @name, :word_id => @word_id, :id => @id, :artist_name => @artist_name, :year_recorded => @year_recorded, :studio => @studio})
   end
 
@@ -47,10 +44,10 @@ class Definition
     @@definitions = {}
   end
 
-  def self.find_by_word(alb_id)
+  def self.find_by_word(wrd_id)
     definitions = []
     @@definitions.values.each do |definition|
-      if definition.word_id == alb_id
+      if definition.word_id == wrd_id
         definitions.push(definition)
       end
     end
